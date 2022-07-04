@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { ImClubs, ImDiamonds, ImHeart, ImSpades } from 'react-icons/im'
 
-const Card = ({value, symbol} : any) => {
+export const Card = ({value, symbol} : any) => {
 
     const [isFlipped, setIsFlipped] = useState(false)
 
@@ -18,10 +18,10 @@ const Card = ({value, symbol} : any) => {
 
 
     return (
-        <div className="h-[15vh] w-[11vh]">
+        <div className="h-[20vh] w-[14.25vh]">
             <div className={`h-full w-full [transition:transform_1s] cursor-pointer relative [transform-style:preserve-3d] ${isFlipped ? "[transform:rotateY(180deg)]" : ""}`} onClick={Flip}>
                 <div className={`absolute w-full h-full border-2 border-black overflow-hidden rounded-lg [-webkit-backface-visibility:hidden] [backface-visibility:hidden] justify-center items-center`} >
-                    <div className='flex justify-center items-center h-full w-full'>
+                    <div className='flex justify-center items-center h-full w-full text-xl'>
                         {value} {symbolsComp[symbol]}
                     </div>
                 </div>
@@ -33,5 +33,3 @@ const Card = ({value, symbol} : any) => {
     )
 
 }
-
-export default Card
