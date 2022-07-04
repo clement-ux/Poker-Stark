@@ -6,7 +6,7 @@ const Home: NextPage = () => {
 
   return (
     <Layout>
-      <Card/>
+      <Card value='10' symbol='S'/>
     </Layout>
   )
 }
