@@ -1,13 +1,12 @@
 import type { NextPage } from 'next';
-import { Layout } from './components/Layout';
+import Card from '../components/Card';
+import { Layout } from '../components/Layout';
 
 const Home: NextPage = () => {
 
   return (
     <Layout>
-      <h1 className="text-3xl font-bold underline">
-        A construire
-      </h1>
+      <Card/>
     </Layout>
   )
 }

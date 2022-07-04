@@ -1,6 +1,6 @@
 import { connect } from "@argent/get-starknet";
 import { useEffect, useState } from "react";
-import {formatAddress} from '../utils/formatAddress'
+import {formatAddress} from '../pages/utils/formatAddress'
 
 export const Header = () =>{
 
