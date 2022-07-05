@@ -28,7 +28,6 @@ export const Board = () => {
         switch(step){
             case 'pre-flop':
                 const drawValues = [values[Math.floor(Math.random() * 13)], values[Math.floor(Math.random() * 13)], values[Math.floor(Math.random() * 13)]];
-                console.log(drawValues)
                 const drawColors = [Math.floor(Math.random() * 4), Math.floor(Math.random() * 4), Math.floor(Math.random() * 4)];
                 setRiverCards(drawValues.map((value, index)=><Card value={value} symbol={colors[drawColors[index]]} size={8}/>));
                 console.log(riverCards)
@@ -61,7 +60,7 @@ export const Board = () => {
                     <div className='flex w-1/4 justify-center items-center'>
                         <Card flipped size={8}/>
                     </div>
-                    <div className='flex w-2/4 justify-start items-center space-x-4'>
+                    <div className='flex w-2/4 h-full justify-start items-center space-x-4'>
                         {riverCards}
                     </div>
                     <div className='flex w-1/4 justify-center items-center'>
