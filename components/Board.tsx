@@ -52,9 +52,27 @@ export const Board = () => {
 
     return(
         <div className='h-full w-full bg-gray-800'>
-            
+             <div className= "absolute h-[75%] w-[75%] top-[15%] right-[11%] p-4 bg-zinc-900 rounded-3xl drop-shadow-xl">
+
+</div>
+            <div className= "absolute top-[46%] right-[79%]  box-border h-32 w-32 p-4 [background:linear-gradient(201.78deg,rgba(175,175,175,0.1519)_0%,rgba(175,175,175,0.49)_100%)] [backdrop-filter:blur(75px)] [border-radius: 14px transform: rotate(90deg)] rounded-xl"> 
+            </div>
+
+            <div className= "absolute top-[10%] right-[60%]  box-border h-32 w-32 p-4 [background:linear-gradient(201.78deg,rgba(175,175,175,0.1519)_0%,rgba(175,175,175,0.49)_100%)] [backdrop-filter:blur(75px)] [border-radius: 14px transform: rotate(90deg)] rounded-xl"> 
+            </div>
+
+            <div className= "absolute top-[10%] right-[30%]  box-border h-32 w-32 p-4 [background:linear-gradient(201.78deg,rgba(175,175,175,0.1519)_0%,rgba(175,175,175,0.49)_100%)] [backdrop-filter:blur(75px)] [border-radius: 14px transform: rotate(90deg)] rounded-xl"> 
+            </div>
+
+            <div className= "absolute top-[46%] right-[9%]  box-border h-32 w-32 p-4 [background:linear-gradient(201.78deg,rgba(175,175,175,0.1519)_0%,rgba(175,175,175,0.49)_100%)] [backdrop-filter:blur(75px)] [border-radius: 14px transform: rotate(90deg)] rounded-xl "> 
+            </div>
+
+
             <div className='h-3/4'>
                 <div className='h-1/3'>
+
+                
+                  
 
                 </div>
                 <div className='flex flex-row h-2/3 w-full justify-between items-center '>
@@ -80,12 +98,13 @@ export const Board = () => {
                     <Card value='9' symbol='S' flippable/>
                 </div>
                 <div className='flex flex-row w-2/5 justify-evenly items-center'>
-                    <input placeholder='0' className='border-2' onChange={(e)=>setBetValue(e.target.value)}/>
+                    <input placeholder='0' className='rounded-md drop-shadow-lg' onChange={(e)=>setBetValue(e.target.value)}/>
                     <div className='grid grid-cols-2 gap-5'>
                         <div className='flex justify-center items-center'>
                             <div className='flex h-12 w-40 rounded-md drop-shadow-lg squared-[1000px] bg-gradient-to-r from-amber-500 via-amber-300 to-amber-500 cursor-pointer justify-center items-center' onClick={()=>Bet(betValue)}>
                                 <p>Bet</p>
                             </div>
+                            
                         </div>
 
                         <div className='flex justify-center items-center row-span-2'>

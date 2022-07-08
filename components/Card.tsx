@@ -33,7 +33,7 @@ export const Card = ({value, symbol, size, flippable, flipped} : any) => {
     return (
         <div className={cardSizeStyle[size]}>
             <div className={`h-full w-full [transition:transform_1s] cursor-pointer relative [transform-style:preserve-3d] ${isFlipped ? "[transform:rotateY(180deg)]" : ""}`} onClick={Flip}>
-                <div className={`bg-zinc-200 absolute w-full h-full border-2 border-black overflow-hidden rounded-lg [-webkit-backface-visibility:hidden] [backface-visibility:hidden] justify-center items-center`} >
+                <div className={`bg-orange-100 absolute w-full h-full overflow-hidden rounded-lg [-webkit-backface-visibility:hidden] [backface-visibility:hidden] justify-center items-center`} >
                     <div className='flex justify-center items-center h-full w-full text-xl'>
                         {value} {symbolsComp[symbol]}
                     </div>
