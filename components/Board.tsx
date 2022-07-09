@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import {Card} from './Card'
 
+
 const colors = ["H", "D", "C", "S"];
 const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 
@@ -73,15 +74,17 @@ export const Board = () => {
     return(
         <div className='h-full w-full bg-gray-800'>
 
+            
                 <div className='flex absolute right-0 w-1/4 justify-center items-center'>
                     <div className='flex h-12 w-24 rounded-md drop-shadow-lg squared-[1000px] bg-gradient-to-r from-red-800 via-red-700 to-red-600 justify-center items-center cursor-pointer text-white' onClick={()=>nextStep(step)}>
                         Next
                     </div>
                 </div>
-
-            <div className= "absolute h-[75%] w-[75%] top-[15%] right-[11%] p-4 bg-green-900 rounded-[50%] drop-shadow-xl">
+        
+            <div className= "absolute h-[75%] w-[75%] top-[15%] right-[11%] p-4 bg-green-900 rounded-3xl drop-shadow-xl">
                 
             </div>
+           
             <div className= "absolute top-[46%] right-[83%] flex justify-center items-center box-border h-32 w-32 p-4 [background:linear-gradient(201.78deg,rgba(175,175,175,0.1519)_0%,rgba(175,175,175,0.49)_100%)] [backdrop-filter:blur(75px)] [border-radius: 14px transform: rotate(90deg)] rounded-xl"> 
                 <HiddenHand angle={"90"}/>
             </div>
@@ -130,7 +133,7 @@ export const Board = () => {
                     </div>
                     </div>
                     
-                    <div className='flex h-12 w-40 rounded-md drop-shadow-lg squared-[1000px] bg-gradient-to-r from-amber-500 via-amber-300 to-amber-500 cursor-pointer justify-center items-center' onClick={()=>Follow()}>
+                    <div className='flex h-12 w-35 rounded-md drop-shadow-lg squared-[1000px] bg-gradient-to-r from-amber-500 via-amber-300 to-amber-500 cursor-pointer justify-center items-center' onClick={()=>Follow()}>
                         <p>Check/Follow</p>
                     </div>
                     
