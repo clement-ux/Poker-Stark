@@ -16,7 +16,9 @@ export const Layout = ({children} :any) => {
     }
 
     const comp : any = {
-        "bestHands" : <BestHands/>
+        "bestHands" : <BestHands/>,
+        "challenges" : <div>Coming soon..</div>,
+        "market" : <div>Coming soon..</div>
     }
 
     return(<div className="min-h-[100vh] w-full ">
@@ -35,27 +37,50 @@ export const Layout = ({children} :any) => {
                     }
                     <div className= {`flex flex-col h-auto w-full space-y-4`}>
                         { (componentToShow == "bestHands" || componentToShow == "") &&
-                            <div className="flex flex-row h-[35px]">
-                                <div className={`flex ${showSide ? "row-span-2" : "row-span-1"} cursor-pointer`} onClick={()=>{setComponentToShow("bestHands"), setShowSide(true)}}>
+                            <div className="flex flex-row h-[35px] items-center ">
+                                <div 
+                                    className={`flex cursor-pointer w-[50px] items-center justify-center`} 
+                                    onClick={()=>{setComponentToShow("bestHands"), setShowSide(true)}}
+                                >
                                     <img className="h-[35px] w-auto mr-4" src='/Images/CardsIcons.png'/>
                                 </div>
-                                <div className={`flex ${showSide ? "text-white transition ease-in duration-300 delay-300 row-span-2" : "text-white/0"} cursor-pointer overflow-hidden`} onClick={()=>setComponentToShow("bestHands")}>{showSide && "Best Hands"}</div>
+                                <div 
+                                    className={`flex ${showSide ? "text-white transition ease-in duration-300 delay-300 row-span-2" : "text-white/0"} cursor-pointer overflow-hidden truncate`} 
+                                    onClick={()=>setComponentToShow("bestHands")}
+                                >
+                                    {showSide && "Best Hands"}
+                                </div>
                             </div>
                         }
-                        { (componentToShow == "" || componentToShow == "") &&
-                            <div className="flex flex-row h-[35px]">
-                                <div className={`flex cursor-pointer`}>
-                                    <img className="h-[35px] w-auto mr-4" src='/Images/CardsIcons.png'/>
+                        { (componentToShow == "challenges" || componentToShow == "") &&
+                            <div className="flex flex-row h-[35px] items-center">
+                                <div 
+                                    className={`flex cursor-pointer w-[50px] items-center justify-center`}
+                                    onClick={()=>{setComponentToShow("challenges"), setShowSide(true)}}>
+                                    <img className="h-[30px] w-auto mr-4" src='/Images/ChallengesIcon.png'/>
                                 </div>
-                                <div className={`flex ${showSide ? "text-white transition ease-in duration-300 delay-300 row-span-2" : "text-white/0"} cursor-pointer overflow-hidden`}>{showSide && "Best Hands"}</div>
+                                <div 
+                                    className={`flex ${showSide ? "text-white transition ease-in duration-300 delay-300 row-span-2" : "text-white/0"} cursor-pointer overflow-hidden truncate`}
+                                    onClick={()=>setComponentToShow("challenges")}
+                                >
+                                    {showSide && "Challenges"}
+                                </div>
                             </div>
                         }
-                        { (componentToShow == "" || componentToShow == "") &&
-                            <div className="flex flex-row h-[35px]">
-                                <div className={`flex cursor-pointer`}>
-                                    <img className="h-[35px] w-auto mr-4" src='/Images/CardsIcons.png'/>
+                        { (componentToShow == "market" || componentToShow == "") &&
+                            <div className="flex flex-row h-[35px] items-center">
+                                <div 
+                                    className={`flex cursor-pointer w-[50px] items-center justify-center`}
+                                    onClick={()=>{setComponentToShow("market"), setShowSide(true)}}
+                                >
+                                    <img className="h-[35px] w-[30px] mr-4" src='/Images/MarketIcon.png'/>
                                 </div>
-                                <div className={`flex ${showSide ? "text-white transition ease-in duration-300 delay-300 row-span-2" : "text-white/0"} cursor-pointer overflow-hidden`}>{showSide && "Best Hands"}</div>
+                                <div 
+                                    className={`flex ${showSide ? "text-white transition ease-in duration-300 delay-300 row-span-2" : "text-white/0"} cursor-pointer overflow-hidden truncate`}
+                                    onClick={()=>setComponentToShow("market")}
+                                >
+                                    {showSide && "Market"}
+                                </div>
                             </div>
                         }
                         </div>
