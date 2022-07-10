@@ -3,7 +3,7 @@ import {Card} from './Card'
 
 
 const colors = ["H", "D", "C", "S"];
-const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+const values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"];
 
 export const Board = () => {
 
@@ -114,7 +114,7 @@ export const Board = () => {
             </div>
                 
             <div className='absolute flex bottom-[2%] right-[36%] flex-row space-x-4 w-[20%]'>
-                <Card value='A' symbol='H' flippable/>
+                <Card value='14' symbol='H' flippable/>
                 <Card value='9' symbol='S' flippable/>
             </div>
             <div className='absolute flex bottom-[5%] right-[5%] flex-row w-1/4 justify-evenly items-center'>

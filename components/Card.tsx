@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 import { ImClubs, ImDiamonds, ImHeart, ImSpades } from 'react-icons/im'
+import { getCard } from '../utils/getCard'
 
 export const Card = ({value, symbol, size, flippable, flipped} : any) => {
 
     if(![3,7,8,10].includes(size)){
         size = 10
     }
+
+    const cardUrl = getCard(value, symbol)
+
+    console.log(cardUrl)
 
     const cardSizeStyle = {
         3 : "h-[6vh] w-[4.2vh]",
@@ -32,14 +37,12 @@ export const Card = ({value, symbol, size, flippable, flipped} : any) => {
 
     return (
         <div className={cardSizeStyle[size]}>
-            <div className={`h-full w-full [transition:transform_1s] shadow-black shadow-lg cursor-pointer relative [transform-style:preserve-3d] ${isFlipped ? "[transform:rotateY(180deg)]" : ""}`} onClick={Flip}>
-                <div className={`bg-white absolute w-full h-full overflow-hidden rounded-lg [-webkit-backface-visibility:hidden] [backface-visibility:hidden] justify-center items-center`} >
-                    <div className='flex justify-center items-center h-full w-full text-xl'>
-                        {value} {symbolsComp[symbol]}
-                    </div>
+            <div className={`h-full w-full [transition:transform_1s] shadow-black rounded-[1vh] shadow-lg cursor-pointer relative [transform-style:preserve-3d] ${isFlipped ? "[transform:rotateY(180deg)]" : ""} p-0`} onClick={Flip}>
+                <div className={`${cardUrl ? "" :"bg-white"} absolute w-full h-full [-webkit-backface-visibility:hidden] [backface-visibility:hidden] -p-1`} >
+                    {cardUrl && <img src={cardUrl} className='h-full w-full rounded-[1vh]' alt='Card front' />}
                 </div>
-                <div className={`absolute w-full h-full overflow-hidden rounded-lg [transform:rotateY(180deg)] [-webkit-backface-visibility:hidden] [backface-visibility:hidden]`}>
-                    <img src={'/Images/card-back.jpg'} className='h-full w-full' alt='Card back' />
+                <div className={`absolute w-full h-full [transform:rotateY(180deg)] [-webkit-backface-visibility:hidden] [backface-visibility:hidden] -p-1`}>
+                    <img src={'/Images/CardBack.png'} className='h-full w-full rounded-[1vh]' alt='Card back' />
                 </div>
             </div>
         </div>
