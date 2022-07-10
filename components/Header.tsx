@@ -1,9 +1,10 @@
-import {formatAddress} from '../pages/utils/formatAddress';
+import {formatAddress} from '../utils/formatAddress';
 import { useStarknet, useConnectors, useStarknetCall } from '@starknet-react/core';
 import { useState } from 'react';
 import { ETHER } from '../constants/tokens';
 import { useERC20Contract } from '../hooks/useERC20Contract';
 import { toBN } from 'starknet/dist/utils/number';
+import { formatValue } from '../utils/formatValue';
 
 export const Header = () =>{
 
@@ -13,7 +14,7 @@ export const Header = () =>{
     const [showAvailable, setShowAvailable] = useState(false);
 
     const { contract } = useERC20Contract(ETHER);
-    const { data:balance, error } = useStarknetCall(
+    const { data:balance } = useStarknetCall(
         {contract : contract,
         method: "balanceOf",
         args : [account]})
@@ -52,7 +53,7 @@ export const Header = () =>{
                 }
                 
                 <div className="flex w-[10vh] h-[10vh] rounded-[1000px] bg-gray-300 justify-center items-center z-10 text-lg text-white">
-                    {balance ? (balance[0].low.toString() / 10**18).toFixed(5) : "0"} ETH
+                    {balance && account ? formatValue(balance[0].low /10**18) : "0"} ETH
                 </div>
             </div>
         </div>
