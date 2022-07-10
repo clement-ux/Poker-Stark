@@ -13,10 +13,10 @@ export const Card = ({value, symbol, size, flippable, flipped} : any) => {
     console.log(cardUrl)
 
     const cardSizeStyle = {
-        3 : "h-[6vh] w-[4.2vh]",
-        7 : "h-[14vh] w-[9.8vh]",
-        8 : "h-[16vh] w-[11.2vh]",
-        10 : "h-[20vh] w-[14vh]"
+        3 : "h-[6vh] w-[4.3vh]",
+        7 : "h-[14vh] w-[9.9vh]",
+        8 : "h-[16vh] w-[11.3vh]",
+        10 : "h-[20vh] w-[14.1vh]"
     }
 
     const [isFlipped, setIsFlipped] = useState(flipped)
