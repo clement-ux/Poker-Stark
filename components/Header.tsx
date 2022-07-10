@@ -23,7 +23,7 @@ export const Header = () =>{
         <div className="flex flex-row w-full h-[8vh] bg-gray-900 justify-between pl-12 pr-12 pt-2 text-white">
             <div className="flex flex-row h-[6vh] items-center justify-center space-x-4">
                 <img className='h-full' src='/Images/logo.png' alt='logo'/>
-                <div>Poker Starks</div>
+                <div>Poker Stark</div>
             </div>
             <div className="flex flex-row space-x-4">
                 {account ? 
