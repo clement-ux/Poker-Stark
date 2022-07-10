@@ -4,7 +4,7 @@ import { getCard } from '../utils/getCard'
 
 export const Card = ({value, symbol, size, flippable, flipped} : any) => {
 
-    if(![3,7,8,10].includes(size)){
+    if(![2,3,7,8,10].includes(size)){
         size = 10
     }
 
@@ -13,6 +13,7 @@ export const Card = ({value, symbol, size, flippable, flipped} : any) => {
     console.log(cardUrl)
 
     const cardSizeStyle = {
+        2 : "h-[4vh] w-[3.1vh]",
         3 : "h-[6vh] w-[4.3vh]",
         7 : "h-[14vh] w-[9.9vh]",
         8 : "h-[16vh] w-[11.3vh]",
